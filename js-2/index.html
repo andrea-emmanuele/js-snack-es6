@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 2</title>
+</head>
+<body>
+    <script>
+        const teams = [
+            {
+                name: "squadra1",
+                fouls_suffered: 0,
+                fouls_done: 0
+            },
+            {
+                name: "squadra2",
+                fouls_suffered: 0,
+                fouls_done: 0
+            },
+            {
+                name: "squadra3",
+                fouls_suffered: 0,
+                fouls_done: 0
+            }
+        ];
+
+        for (let i = 0; i < teams.length; i++) {
+            teams[i].fouls_suffered = random();
+            teams[i].fouls_done = random();
+        }
+
+        console.log(teams);
+
+        const [teamOne, teamTwo, teamThree] = teams;
+
+        let teams_fouls = [
+            {
+                name: teamOne.name,
+                fouls_suffered: teamOne.fouls_suffered
+            },
+            {
+                name: teamTwo.name,
+                fouls_suffered: teamTwo.fouls_suffered
+            },
+            {
+                name: teamThree.name,
+                fouls_suffered: teamThree.fouls_suffered
+            }];
+
+        console.log(teams_fouls);
+
+        function random() {
+            return Math.floor(Math.random() * 30);
+        }
+
+    </script>
+</body>
+</html>
