@@ -9,25 +9,38 @@
         const bikes = [
             {
                 name: "bike1",
-                weight: 2.2
+                weight: 6
             },
             {
                 name: "bike2",
-                weight: 1.8
+                weight: 12
             },
             {
                 name: "bike3",
-                weight: 2.9
+                weight: 4
             },
             {
                 name: "bike4",
-                weight: 3.1
+                weight: 3
+            },
+            {
+                name: "bike5",
+                weight: 5
             }
         ];
 
-        for (let i = 0; i < bikes.length; i++) {
+        let [bikeOne] = bikes;
+        let min = bikeOne.weight;
+        let bike;
 
+        for (let i = 0; i < bikes.length; i++) {
+            if (bikes[i].weight < min) {
+                min = bikes[i].weight;
+                bike = bikes[i];
+            }
         }
+
+        console.log(`La bici più leggera è ${bike.name} con un peso di ${min}`);
     </script>
 </body>
 </html>
