@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Milestone 1</title>
+</head>
+<body>
+    <ul></ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // milestone 1
+        const cats = [
+            {
+                name: "cat1",
+                age: 3,
+                color: "brown",
+                gender: "female"
+            },
+            {
+                name: "cat2",
+                age: 6,
+                color: "grey",
+                gender: "female"
+            },
+            {
+                name: "cat3",
+                age: 5,
+                color: "blue",
+                gender: "male"
+            },
+            {
+                name: "cat 4",
+                age: 8,
+                color: "grey",
+                gender: "male"
+            }
+        ];
+
+        cats.forEach((cat) => console.log(`name: ${cat.name} - color: ${cat.color}`));
+
+        // milestone 2
+        const maleCats = cats.filter((cat) => cat.gender === "male");
+        const femaleCats = cats.filter((cat) => cat.gender === "female");
+
+        maleCats.forEach((cat) => $("body > ul").append(`<li>${cat.name}<span style="width: 10px; height: 10px; background: lightblue; margin-left: 5px; opacity: 0.${cat.age}; display: inline-block"></span></li>`));
+        femaleCats.forEach((cat) => $("body > ul").append(`<li>${cat.name}<span style="width: 10px; height: 10px; background: pink; margin-left: 5px; opacity: 0.${cat.age}; display: inline-block"></span></li>`));
+
+        // milestone 3
+        let newCats = [];
+
+        femaleCats.forEach((cat) => {
+            newCats.push({
+                name: cat.name,
+                color: cat.color,
+                flakeColor: "pink",
+                flakeOpacity: `0.${cat.age}`
+            });
+        });
+
+        maleCats.forEach((cat) => {
+            newCats.push({
+                name: cat.name,
+                color: cat.color,
+                flakeColor: "pink",
+                flakeOpacity: `0.${cat.age}`
+            });
+        });
+
+        console.log(newCats);
+    </script>
+</body>
+</html>
